@@ -1,0 +1,185 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>饿了么</title>
+        <meta http-equiv="X-UA-Compatiable" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-logo"></div>
+                <ul class="nav-item">
+                    <li data-nav="home">首页</li>
+                    <li data-nav="brand">品牌餐厅</li>
+                    <li data-nav="order">我的饿单</li>
+                </ul>
+                <ul class="nav-link">
+                    <li data-nav="pointsMall">积分商城</li>
+                    <li data-nav="serviceCenter">客服中心</li>
+                    <li data-nav="mobileApp">手机应用</li>
+                </ul>
+                <span class="nav-profilebar">
+                    <a href="https://account.ele.me/login" target="_blank">登录</a>/
+                    <a href="https://account.ele.me/register" target="_blank">注册</a>
+                </span>
+            </nav>
+            <section>
+                <div class="location">
+                    <span class="location-title">当前位置：</span>
+                    <span class="location-addr">上海市</span>
+                    <a href="#">[切换地址]</a>
+                </div>
+                <div class="search">
+                    <label for="search-input"></label>
+                    <input type="text" id="search-input">
+                </div>
+            </section>
+        </header>
+
+        <section class="carousel">
+            <ul class="carousel-list">
+                <li class="carousel-item"></li>
+            </ul>
+        </section>
+
+        <menu class="menu-filter">
+            <ul class="menu-filter-item">
+                <li>外卖餐厅</li>
+                <li>购买过的餐厅</li>
+                <li>附近的团购</li>
+            </ul>
+            <dl class="menu-filter-list">
+                <dt>餐厅分类：</dt>
+                <dd>不限</dd>
+                <dd>奶茶</dd>
+                <dd>汉堡</dd>
+                <dd>中式</dd>
+                <dd>西式</dd>
+                <dd>港式</dd>
+                <dd>甜点</dd>
+                <dd>水果</dd>
+                <dd>烧烤</dd>
+                <dd>韩式</dd>
+                <dd>台式</dd>
+                <dd>清真</dd>
+                <dd>日式</dd>
+                <dt>优惠活动</dt>
+                <dd>不限</dd>
+                <dd>全部优惠活动</dd>
+                <dd>满减优惠</dd>
+                <dd>下单份赠冰红茶</dd>
+                <dd>闪电红包</dd>
+                <dd>新用户立减(不与其他活动共享)</dd>
+                <dd>10.8元秒杀</dd>
+                <dd>抵价券</dd>
+            </dl>
+            <ul class="menu-filter-sort">
+                <li class="active" data-sort="default">默认排序</li>
+                <li data-sort="sale">销量</li>
+                <li data-sort="other">
+                    其他排序 
+                    <ul class="menu-sort-other">
+                        <li>配送速度</li>
+                        <li>起送金额</li>
+                        <li>新开餐厅</li>
+                    </ul>
+                </li>
+                <li>
+                    起送价格：<span>不限</span>
+                    <ul>
+                        <li>不限</li>
+                        <li>15元以下</li>
+                        <li>20元以下</li>
+                        <li>30元以下</li>
+                        <li>40元以下</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="menu-filter-options">
+                <input name="options" type="checkbox" value="freeDelivery">免费配送
+                <input name="options" type="checkbox" value="overtimePay">超时赔付
+                <input name="options" type="checkbox" value="invoice">可开发票
+                <input name="options" type="checkbox" value="onlinePay">在线支付
+            </div>
+        </menu>
+
+        <section class="shop">
+            <div class="row">
+                <div class="col-item-3">
+                    <div class="shop-item">
+                        <img class="shop-item-icon" src="" />
+                        <h2>店铺名称</h2>
+                        <span class="shop-item-sale">月销XX份</span>
+                        <span class="shop-item-sort">10元起送 / 免费配送</span>
+                        <time>60分钟</time>
+                    </div>
+                </div>
+                <div class="col-item-3">
+                    <div class="shop-item">
+                        <img class="shop-item-icon" src="" />
+                        <h2>店铺名称</h2>
+                        <span class="shop-item-sale">月销XX份</span>
+                        <span class="shop-item-sort">10元起送 / 免费配送</span>
+                        <time>60分钟</time>
+                    </div>
+                </div>
+                <div class="col-item-3">
+                    <div class="shop-item">
+                        <img class="shop-item-icon" src="" />
+                        <h2>店铺名称</h2>
+                        <span class="shop-item-sale">月销XX份</span>
+                        <span class="shop-item-sort">10元起送 / 免费配送</span>
+                        <time>60分钟</time>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <dl>
+                <dt>用户帮助</dt>
+                <dd>服务中心</dd>
+                <dd>常见问题</dd>
+                <dd>意见反馈</dd>
+                <dd>在线客服</dd>
+
+                <dt>商务合作</dt>
+                <dd>我要开店</dd>
+                <dd>加盟指南</dd>
+                <dd>市场合作</dd>
+
+                <dt>关于我们</dt>
+                <dd>饿了么介绍</dd>
+                <dd>加入我们</dd>
+                <dd>联系我们</dd>
+                <dd>服务协议</dd>
+            </dl>
+
+            <section class="contact">
+                <dl>
+                    <dt>24小时客服热线：</dt>
+                        <dd>10105757</dd>
+                    <dt>意见反馈：</dt>
+                        <dd>feedback@ele.me</dd>
+                    <dt>关注我们：</dt>
+                        <dd>微信</dd>
+                        <dd>新浪微博</dd>
+                        <dd>人人网</dd>
+                </dl>
+            </section>
+
+            <section class="app">
+                <div class="qr-code"></div>
+                <h3>下载手机版</h3>
+                <span>扫一扫，手机订餐方便</span>
+                <div class="app-iphone"></div>
+                <div class="app-android"></div>
+            </section>
+        </footer>
+
+        <script type="text/javascript" src="js/carousel.js"></script>
+    </body>
+</html>
