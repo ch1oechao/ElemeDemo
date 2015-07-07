@@ -14,11 +14,19 @@ li {
 a {
   text-decoration: none;
 }
+.fa-1x {
+  font-size: 1.2em;
+  padding: 0 6px;
+}
 .container {
   position: relative;
-  width: 90%;
-  min-width: 1024px;
+  width: 84%;
   margin: 0 auto;
+  -webkit-transition: width .5s linear;
+  -moz-transition: width .5s linear;
+  -ms-transition: width .5s linear;
+  -o-transition: width .5s linear;
+  transition: width .5s linear;
 }
 .container:before,
 .container:after {
@@ -29,14 +37,10 @@ a {
 .container:after {
   clear: both;
 }
-@media and (max-width: 960px) {
-  .container {
-    width: 100%;
-  }
-}
 nav {
   display: block;
   height: 60px;
+  width: 100%;
   line-height: 60px;
   color: #ffffff;
   background-color: #1e89e0;
@@ -104,7 +108,7 @@ nav .nav-link {
   color: #A5D0F3;
 }
 nav .nav-link li {
-  padding: 0 15px;
+  padding: 0 8px;
 }
 nav .nav-link li:hover {
   color: #ffffff;
@@ -129,6 +133,10 @@ nav .nav-profilebar > a:active {
   color: #000;
   background-color: #FFF;
   box-shadow: 2px 2px 5px #666;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
   transition: all .2s linear;
 }
 .nav-moblie h3 {
@@ -204,6 +212,10 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   margin-right: -8px;
   padding: 5px;
   border: 1px solid #DDD;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .header-bar .search input:focus {
@@ -212,13 +224,18 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   width: 280px;
 }
 .header-bar .search span {
-  margin-left: -25px;
+  position: absolute;
+  top: 24px;
+  right: 8px;
   cursor: pointer;
+}
+.header-bar .search span i.fa-search {
+  color: #999;
 }
 .header-bar .search::after {
   content: "|";
   position: relative;
-  right: 48px;
+  right: 42px;
   color: #DDD;
 }
 .carousel {
@@ -302,7 +319,7 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   color: #1e89e0;
 }
 .menu-filter-sort .menu-other {
-  width: 100px;
+  width: 105px;
 }
 .menu-filter-sort .menu-other:hover {
   background-color: #FFF;
@@ -312,7 +329,7 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   display: block;
 }
 .menu-filter-sort .menu-price {
-  width: 140px;
+  width: 145px;
 }
 .menu-filter-sort .menu-price:hover {
   background-color: #FFF;
@@ -417,6 +434,12 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   line-height: 2em;
   color: #999;
 }
+.shop-item-grade {
+  padding-right: 3px;
+}
+.shop-item-grade i.fa-star {
+  color: #FFC100;
+}
 .shop-attr-icon {
   position: absolute;
   top: 90px;
@@ -429,6 +452,7 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   font-size: .9em;
   line-height: 20px;
   text-align: center;
+  border-radius: 3px;
   background-color: #CCC;
 }
 .shop-more {
@@ -488,6 +512,28 @@ footer {
   padding-right: 5px;
   line-height: 45px;
 }
+.contact dd a {
+  cursor: pointer;
+}
+.contact dd a:link,
+.contact dd a:visited,
+.contact dd a:hover,
+.contact dd a:active {
+  color: #1e89e0;
+}
+.contact dd i.fa {
+  line-height: 49px;
+  cursor: pointer;
+}
+.contact dd i.fa-wechat:hover {
+  color: #46F00A;
+}
+.contact dd i.fa-weibo:hover {
+  color: #F21212;
+}
+.contact dd i.fa-renren:hover {
+  color: #00F;
+}
 .app {
   float: right;
   padding-top: 15px;
@@ -522,4 +568,56 @@ footer {
   line-height: 60px;
   clear: both;
   text-align: center;
+}
+.copyright a {
+  cursor: pointer;
+}
+.copyright a:link,
+.copyright a:visited,
+.copyright a:hover,
+.copyright a:active {
+  color: #1e89e0;
+}
+@media (max-width: 1280px) {
+  .container {
+    width: 96%;
+  }
+  .row {
+    width: 100%;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: -2px;
+  }
+  .row .col-item {
+    display: inline-block;
+    margin-top: -4px;
+    margin-left: -6px;
+    margin-right: -1px;
+    padding: 0 3px;
+    width: 33%;
+    clear: both;
+    border-bottom: 1px solid #DDD;
+  }
+}
+@media (max-width: 960px) {
+  .container {
+    width: 100%;
+  }
+  .row .col-item {
+    width: 33%;
+  }
+}
+@media (max-width: 860px) {
+  .row {
+    width: 100%;
+    margin-top: 4px;
+  }
+  .row .col-item {
+    display: inline-block;
+    margin-top: -4px;
+    margin-left: -8px;
+    width: 50%;
+    clear: both;
+    border-bottom: 1px solid #DDD;
+  }
 }

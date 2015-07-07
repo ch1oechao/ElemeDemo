@@ -30,11 +30,22 @@ a {
     text-decoration: none;
 }
 
+.fa-1x {
+    font-size: 1.2em;
+    padding: 0 6px;
+}
+
 .container {
     position: relative;
-    width: 90%;
-    min-width: 1024px;
+    width: 84%;
+
     margin: 0 auto;
+
+    -webkit-transition: width .5s linear;
+       -moz-transition: width .5s linear;
+        -ms-transition: width .5s linear;
+         -o-transition: width .5s linear;
+            transition: width .5s linear;
 
     &:before,
     &:after {
@@ -48,15 +59,11 @@ a {
     }
 }
 
-@media and (max-width:960px) {
-    .container {
-        width: 100%;
-    }
-}
-
 nav {
     display: block;
     height: 60px;
+    width: 100%;
+
 
     line-height: 60px;
 
@@ -79,7 +86,6 @@ nav {
             color: @brand-item;
         }
     }
-
 
     .nav-item {
         float: left;
@@ -144,7 +150,7 @@ nav {
         color: #A5D0F3;
 
         li {
-            padding: 0 15px;
+            padding: 0 8px;
 
             &:hover {
                 color: @brand-item;
@@ -181,7 +187,11 @@ nav {
     background-color: #FFF;
     box-shadow: 2px 2px 5px #666;
 
-    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+        -ms-transition: all .2s linear;
+         -o-transition: all .2s linear;
+            transition: all .2s linear;
 
     h3 {
         font-size: 1em;
@@ -274,24 +284,36 @@ li[data-nav = mobileApp] {
 
             border: 1px solid #DDD;
 
-            transition: all .2s ease-in-out;
+            -webkit-transition: all .2s ease-in-out;
+               -moz-transition: all .2s ease-in-out;
+                -ms-transition: all .2s ease-in-out;
+                 -o-transition: all .2s ease-in-out;
+                    transition: all .2s ease-in-out;
 
             &:focus {
                 outline: none;
                 box-shadow: 1px 1px 1px #DDD;
                 width: 280px;
             }
+
+            
         }
 
         span {
-            margin-left: -25px;
+            position: absolute;
+            top: 24px;
+            right: 8px;
             cursor: pointer;
+
+            i.fa-search {
+                color: #999;
+            }
         }
 
         &::after {
             content: "|";
             position: relative;
-            right: 48px;
+            right: 42px;
             color: #DDD;
         }
     }
@@ -401,7 +423,8 @@ li[data-nav = mobileApp] {
     }
 
     .menu-other {
-        width: 100px;
+        width: 105px;
+
         &:hover {
             background-color: #FFF;
             box-shadow: 1px 1px 1px #999;
@@ -412,7 +435,8 @@ li[data-nav = mobileApp] {
     }
 
     .menu-price {
-        width: 140px;
+
+        width: 145px;
         &:hover {
             background-color: #FFF;
             box-shadow: 1px 1px 1px #999;
@@ -470,6 +494,7 @@ li[data-nav = mobileApp] {
 
 .row {
     width: 100%;
+
     margin-top: 4px;
     margin-left: 4px;
     margin-right: -2px;
@@ -479,6 +504,7 @@ li[data-nav = mobileApp] {
         margin-top: -4px;
         margin-left: -4px;
         margin-right: -1px;
+
         width: 25%;
         clear: both;
         border-bottom: 1px solid #DDD;
@@ -543,6 +569,15 @@ li[data-nav = mobileApp] {
         line-height: 2em;
         color: #999;
     }
+
+}
+
+.shop-item-grade {
+    padding-right: 3px;
+
+    i.fa-star {
+        color: #FFC100;
+    }
 }
 
 .shop-attr-icon {
@@ -560,6 +595,7 @@ li[data-nav = mobileApp] {
         line-height: 20px;
         text-align: center;
 
+        border-radius: 3px;
         background-color: #CCC;
     }
 }
@@ -638,6 +674,40 @@ footer {
         float: left;
         padding-right: 5px;
         line-height: 45px;
+
+        a {
+            cursor: pointer;
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                color: @brand-bgcolor;
+            }
+        }
+
+        i.fa {
+            line-height: 49px;
+            cursor: pointer;
+        }
+
+        i.fa-wechat{
+            &:hover {
+                color: #46F00A;
+            }
+        }
+
+        i.fa-weibo {
+            &:hover {
+                color: #F21212;
+            }
+        }
+
+        i.fa-renren {
+            &:hover {
+                color: #00F;
+            }
+        }
     }
 }
 
@@ -684,4 +754,70 @@ footer {
 
     clear: both;
     text-align: center;
+
+    a {
+        cursor: pointer;
+
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+            color: @brand-bgcolor;
+        }
+    }
+}
+
+
+@media (max-width: 1280px){
+    .container {
+        width: 96%;
+    }
+    .row {
+        width: 100%;
+
+        margin-top: 4px;
+        margin-left: 4px;
+        margin-right: -2px;
+
+        .col-item {
+            display: inline-block;
+            margin-top: -4px;
+            margin-left: -6px;
+            margin-right: -1px;
+
+            padding: 0 3px;
+
+            width: 33%;
+            clear: both;
+            border-bottom: 1px solid #DDD;
+        }
+    }
+}
+
+@media (max-width: 960px){
+    .container {
+        width: 100%;
+    }
+    .row {
+        .col-item {
+            width: 33%;
+        }
+    }
+}
+
+@media (max-width: 860px){
+    .row {
+        width: 100%;
+        margin-top: 4px;
+
+        .col-item {
+            display: inline-block;
+            margin-top: -4px;
+            margin-left: -8px;
+
+            width: 50%;
+            clear: both;
+            border-bottom: 1px solid #DDD;
+        }
+    }
 }
