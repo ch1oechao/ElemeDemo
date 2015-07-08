@@ -113,22 +113,22 @@ carouseller.prototype.renderDom = function(n) {
         item.style.width = that.width;
         item.style.display = 'inline-block';
         item.style.position = 'absolute';
-        item.style.transition = 'transform .3s ease-out';
-        item.style.transform = 'translate3d(0, ' + that.height * i + 'px, 0)';
+        item.style.transition = 'top .3s ease-out';
+        item.style.top = that.height * i + 'px';
     });
 
     // 当前序号显示图片
-    imgDom[curId].style.transform = 'translate3d(0, 0, 0)';
+    imgDom[curId].style.top = 0;
 
     // 当前序号之前影藏图片
     for (var i = 0; i < curId; i++) {
       imgDom[i] 
-        && (imgDom[i].style.transform = 'translate3d(0, -' + that.height +'px, 0)');
+        && (imgDom[i].style.top = '-' + that.height +'px');
     }
     // 当前序号之后影藏图片
     for (var ii = curId + 1; ii < len; ii++) {
       imgDom[ii] 
-        && (imgDom[ii].style.transform = 'translate3d(0, ' + that.height +'px, 0)');
+        && (imgDom[ii].style.top = that.height +'px');
     }
 
     // 更换当前序号导航节点的样式

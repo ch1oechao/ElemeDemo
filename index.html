@@ -6,6 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 
+        <!--[if IE]>
+        <script src="js/html5.js"></script>
+        <![endif]-->
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
@@ -22,13 +25,16 @@
                     <ul class="nav-link">
                         <li data-nav="pointsMall"><i class="fa fa-shopping-cart fa-1x"></i>积分商城</li>
                         <li data-nav="serviceCenter"><i class="fa fa-group fa-1x"></i>客服中心</li>
-                        <li data-nav="mobileApp"><i class="fa fa-phone fa-1x"></i>手机应用</li>
-                        <div class="nav-moblie">
-                            <h3>扫一扫, 手机订餐更方便</h3>
-                            <img src="img/appqc.png" alt="qr_code">
-                            <a href="#" target="_blank">iPhone</a>
-                            <a href="#" target="_blank">Android</a>
-                        </div>
+                        <li data-nav="mobileApp"><i class="fa fa-phone fa-1x"></i>
+                            手机应用
+                            <div class="nav-moblie">
+                                <h3>扫一扫, 手机订餐更方便</h3>
+                                <img src="img/appqc.png" alt="qr_code">
+                                <a href="#" target="_blank">iPhone</a>
+                                <a href="#" target="_blank">Android</a>
+                            </div>
+                        </li>
+                        
                     </ul>
                     <span class="nav-profilebar">
                         <i class="fa fa-user fa-1x"></i>
@@ -46,8 +52,8 @@
                         <a href="#">[切换地址]</a>
                     </div>
                     <div class="search">
-                        <span><i class="fa fa-search fa-1x"></i></span>
                         <input type="text" id="search-input" placeholder="搜索美食，餐厅...">
+                        <span><i class="fa fa-search fa-1x"></i></span>
                     </div>
                 </div>
             </section>
