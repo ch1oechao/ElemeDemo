@@ -1,28 +1,5 @@
-## 一、时间 + 资料
+## Just A Demo For Eleme
 
-- 时间：自选三天内独立完成，可使用任何辅助工具，代码最好不依赖框架/库
-- URL：[http://ele.me/place/wtw27pnxv422](http://ele.me/place/wtw27pnxv422)
-- 邮箱：sofish@ele.me （结果发到这个邮箱）
-- 设备：IE 只需支持 8 或以上
+原网页：[[ Original Page ]](http://ele.me/place/wtw27pnxv422)
 
-## 二、题
-
-#### 1. 用所学的 HTML + CSS 重构上述 URL 页面
-
-- 要求：重构，说明你的方式为什么是更好的
-- 加分：与原页面有 3 个以上的改进点
-
-
-#### 2. 实现上述 URL 中「幻灯片」切换组件（页面中如果不显示则参考下图）
-
-![](http://ww3.sinaimg.cn/large/61b90cbegw1ei0myxvsv0j21j205egof.jpg)
-- 要求：实现一样的效果
-- 加分：支持鼠标切换、无限循环等
-
-
-#### 3. 利用所学知识，从 ele.me 网站（包括 m.ele.me）中找出 3 个可改进的点
-- 要求：至少 3 个，技术不限，也可以是交互方面的内容，并说明改进原因
-
-
-#### 4. 说说为什么选择做一个前端
-- 要求：少于 300 字
+小样：[[Demo]](http://www.chen9.info/ElemeDemo/)
