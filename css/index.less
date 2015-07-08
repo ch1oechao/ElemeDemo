@@ -1,7 +1,7 @@
 //颜色
 @bgcolor: #F7F7F7;
 
-@brand-bgcolor: #0088CC;
+@brand-bgcolor: #1E89E0;
 @brand-active: #006BC7;
 @brand-link: #A5D0F3;
 
@@ -23,7 +23,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Microsoft YaHei', sans-serif;
+    font-family: PingFang SC,Lantinghei SC,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;
 }
 
 header,
@@ -36,6 +36,7 @@ menu {
 
 html {
     width: 100%;
+    font-weight: 300;
     background-color: @bgcolor;
 }
 
@@ -54,7 +55,7 @@ a {
 
 .container {
     position: relative;
-    width: 84%;
+    width: 90%;
     min-width: 1100px\9;
     margin: 0 auto;
 
@@ -104,7 +105,7 @@ nav {
             margin: -3px;
 
             &:hover {
-                background-color: #0D7CDE;
+                background-color: #0C77D1;
                 cursor: pointer;
             }
         }
@@ -252,11 +253,12 @@ li[data-nav = mobileApp] {
 
 .header-bar {
     width: 100%;
-    height: 65px;
-    line-height: 65px;
+    height: 55px;
+    line-height: 55px;
 
     .location {
         display: inline-block;
+        font-size: 12px;
     }
 
     .location-title {
@@ -284,10 +286,11 @@ li[data-nav = mobileApp] {
             position: absolute;
             right: 0;
             
-            margin: 15px 0;
+            margin: 9px 0;
             padding: 5px;
             height: 25px;
-            width: 225px;
+            width: 285px;
+            outline: 0;
 
             line-height: 25px;
             border: 1px solid #DDD;
@@ -297,7 +300,7 @@ li[data-nav = mobileApp] {
             &:focus {
                 outline: none;
                 box-shadow: 1px 1px 1px #DDD;
-                width: 280px;
+                width: 355px;
             }
         }
 
@@ -322,7 +325,7 @@ li[data-nav = mobileApp] {
     position: relative;
 
     width: 100%;
-    height: 120px;
+    height: 80px;
     margin-bottom: 10px;
 
     overflow: hidden;
@@ -334,7 +337,7 @@ li[data-nav = mobileApp] {
 
     img {
         width: 100%;
-        height: 120px;
+        height: 80px;
     }
 }
 
@@ -350,17 +353,23 @@ li[data-nav = mobileApp] {
     li {
         display: inline-block;
         float: left;
-        width: 20px;
+        width: 18px;
         height: 20px;
-        line-height: 20px;
+
         margin-left: 3px;
         text-align: center;
+        vertical-align: middle;
 
         cursor: pointer;
-        background-color: rgba(0,0,0, .2);
+        background-color: rgba(255, 255 ,255, .5);
+
+        
+        font-size: .9em;
 
         &.active,
         &:hover {
+            font-weight: 600;
+
             color: @white;
             background-color: #FF5A00;
         }
@@ -413,6 +422,8 @@ li[data-nav = mobileApp] {
     overflow: hidden;
 
     border: 1px solid @greyC;
+    border-top: none;
+    border-bottom: none;
 
     font-size: .9em;
     color: @gray9;
@@ -420,6 +431,7 @@ li[data-nav = mobileApp] {
 
     dl {
         padding: 16px 10px;
+        border-top: 1px solid @greyC;
     }
 
     dt {
@@ -431,8 +443,8 @@ li[data-nav = mobileApp] {
 
     dd {
         display: inline;
-        padding: 1px 8px;
-        margin: 0 6px;
+        padding: 3px 8px;
+        margin: 0 5px;
         line-height: 1.8em;
 
         &:hover {
@@ -458,6 +470,8 @@ li[data-nav = mobileApp] {
     height: 50px;
     margin-bottom: 10px;
 
+    font-size: .9em;
+
     border: 1px solid #DDD;
     border-top: none;
     background-color: #F7F7F7;
@@ -481,7 +495,7 @@ li[data-nav = mobileApp] {
 
         &:hover {
             background-color: @white;
-            box-shadow: 1px 1px 1px @gray9;
+            box-shadow: 1px 2px 1px @gray9;
         }
         &:hover > .menu-sort-other {
             display: block;
@@ -493,7 +507,7 @@ li[data-nav = mobileApp] {
         width: 145px;
         &:hover {
             background-color: @white;
-            box-shadow: 1px 1px 1px @gray9;
+            box-shadow: 1px 2px 1px @gray9;
         }
         &:hover > .menu-sort-price {
             display: block;
@@ -585,8 +599,8 @@ li[data-nav = mobileApp] {
         position: absolute;
         top: 0;
         left: 0;
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         padding: 20px;
     }
 
@@ -601,6 +615,7 @@ li[data-nav = mobileApp] {
         width: 80px;
 
         color: @gray9;
+        font-size: .8em;
         text-align: center;
     }
 
@@ -611,7 +626,8 @@ li[data-nav = mobileApp] {
     top: 0;
     left: 90px;
 
-    padding: 20px;
+    padding-top: 15px;
+    padding-left: 20px;
 
     h2 {
         font-size: 1.2em;
@@ -639,14 +655,15 @@ li[data-nav = mobileApp] {
     top: 90px;
     left: 90px;
 
-    padding: 20px;
+    padding-top: 16px;
+    padding-left: 20px;
 
     span {
         display: inline-block;
-        width: 20px;
+        width: 18px;
 
-        font-size: .9em;
-        line-height: 20px;
+        font-size: .8em;
+        line-height: 18px;
         text-align: center;
 
         border-radius: 3px;
@@ -701,7 +718,7 @@ footer {
 }
 
 .contact {
-    
+    position: relative;
     float: left;
     width: 240px;
     margin-left: 5%;
@@ -740,6 +757,10 @@ footer {
             }
         }
 
+        i {
+            cursor: pointer;
+        }
+
         i.fa {
             line-height: 49px;
             cursor: pointer;
@@ -748,6 +769,9 @@ footer {
         i.fa-wechat{
             &:hover {
                 color: #46F00A;
+            }
+            &:hover ~ .contact-wechat {
+                display: block;
             }
         }
 
@@ -765,9 +789,46 @@ footer {
     }
 }
 
+.contact-wechat {
+    position: absolute;
+    top: 132px;
+    left: 75px;
+    width: 120px;
+    height: 160px;
+    color: @black;
+    background-color: @white;
+    box-shadow: 0 3px 3px @greyC;
+
+    display: none;
+
+    img {
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        margin: 5px 5px -15px;
+    }
+
+    p {
+        line-height: 18px;
+        font-size: .8em;
+        text-align: center;
+    }
+
+    &:after {
+        content: "";
+        position: relative;
+        top: -192px;
+        left: 50px;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-bottom-color: @white;
+    }
+}
+
 .app {
     float: right;
-    padding-top: 15px;
+    padding-top: 10px;
 
     img {
         float: left;
@@ -802,7 +863,7 @@ footer {
 }
 
 .copyright {
-    padding-top: 60px;
+    padding-top: 85px;
     height: 60px;
     line-height: 60px;
 
@@ -824,7 +885,7 @@ footer {
 
 @media (max-width: 1280px){
     .container {
-        width: 96%;
+        width: 92%;
     }
     .row {
         width: 100%;
@@ -909,6 +970,9 @@ footer {
 }
 
 @media (max-width: 860px){
+    .container {
+        min-width: 768px;
+    }
     .row {
         width: 100%;
         margin-top: 4px;

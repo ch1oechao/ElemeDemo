@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Microsoft YaHei', sans-serif;
+  font-family: PingFang SC,Lantinghei SC,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;
 }
 header,
 section,
@@ -12,6 +12,7 @@ menu {
 }
 html {
   width: 100%;
+  font-weight: 300;
   background-color: #f7f7f7;
 }
 li {
@@ -26,7 +27,7 @@ a {
 }
 .container {
   position: relative;
-  width: 84%;
+  width: 90%;
   min-width: 1100px\9;
   margin: 0 auto;
   -webkit-transition: width 0.5s linear;
@@ -44,7 +45,7 @@ nav {
   width: 100%;
   line-height: 60px;
   color: #ffffff;
-  background-color: #0088cc;
+  background-color: #1e89e0;
 }
 nav h1 {
   float: left;
@@ -69,7 +70,7 @@ nav .nav-item li {
   margin: -3px;
 }
 nav .nav-item li:hover {
-  background-color: #0D7CDE;
+  background-color: #0C77D1;
   cursor: pointer;
 }
 nav li[data-nav=brand] {
@@ -189,11 +190,12 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 }
 .header-bar {
   width: 100%;
-  height: 65px;
-  line-height: 65px;
+  height: 55px;
+  line-height: 55px;
 }
 .header-bar .location {
   display: inline-block;
+  font-size: 12px;
 }
 .header-bar .location-title {
   color: #999999;
@@ -205,7 +207,7 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 .header-bar a:visited,
 .header-bar a:hover,
 .header-bar a:active {
-  color: #0088cc;
+  color: #1e89e0;
 }
 .header-bar .search {
   position: absolute;
@@ -215,10 +217,11 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 .header-bar .search input {
   position: absolute;
   right: 0;
-  margin: 15px 0;
+  margin: 9px 0;
   padding: 5px;
   height: 25px;
-  width: 225px;
+  width: 285px;
+  outline: 0;
   line-height: 25px;
   border: 1px solid #DDD;
   -webkit-transition: all 0.2s ease-in-out;
@@ -230,7 +233,7 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 .header-bar .search input:focus {
   outline: none;
   box-shadow: 1px 1px 1px #DDD;
-  width: 280px;
+  width: 355px;
 }
 .header-bar .search span {
   position: relative;
@@ -248,14 +251,14 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 .carousel {
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 80px;
   margin-bottom: 10px;
   overflow: hidden;
   background-color: #DDD;
 }
 .carousel-list img {
   width: 100%;
-  height: 120px;
+  height: 80px;
 }
 .carousel-order {
   position: absolute;
@@ -268,16 +271,18 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 .carousel-order li {
   display: inline-block;
   float: left;
-  width: 20px;
+  width: 18px;
   height: 20px;
-  line-height: 20px;
   margin-left: 3px;
   text-align: center;
+  vertical-align: middle;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: .9em;
 }
 .carousel-order li.active,
 .carousel-order li:hover {
+  font-weight: 600;
   color: #ffffff;
   background-color: #FF5A00;
 }
@@ -297,8 +302,8 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   background: url(../img/takeout.png) no-repeat;
 }
 .menu-filter-item .active {
-  color: #0088cc;
-  border-bottom: 2px solid #0088cc;
+  color: #1e89e0;
+  border-bottom: 2px solid #1e89e0;
 }
 .menu-filter-item li {
   display: inline-block;
@@ -318,12 +323,15 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   width: 100%;
   overflow: hidden;
   border: 1px solid #cccccc;
+  border-top: none;
+  border-bottom: none;
   font-size: .9em;
   color: #999999;
   background-color: #ffffff;
 }
 .menu-filter-list dl {
   padding: 16px 10px;
+  border-top: 1px solid #cccccc;
 }
 .menu-filter-list dt {
   display: inline-block;
@@ -333,8 +341,8 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 }
 .menu-filter-list dd {
   display: inline;
-  padding: 1px 8px;
-  margin: 0 6px;
+  padding: 3px 8px;
+  margin: 0 5px;
   line-height: 1.8em;
 }
 .menu-filter-list dd:hover {
@@ -347,12 +355,13 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   color: #ffffff;
   cursor: pointer;
   border-radius: 3px;
-  background-color: #0088cc;
+  background-color: #1e89e0;
 }
 .menu-filter-sort {
   width: 100%;
   height: 50px;
   margin-bottom: 10px;
+  font-size: .9em;
   border: 1px solid #DDD;
   border-top: none;
   background-color: #F7F7F7;
@@ -366,14 +375,14 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   text-align: center;
 }
 .menu-filter-sort > li:hover {
-  color: #0088cc;
+  color: #1e89e0;
 }
 .menu-filter-sort .menu-other {
   width: 105px;
 }
 .menu-filter-sort .menu-other:hover {
   background-color: #ffffff;
-  box-shadow: 1px 1px 1px #999999;
+  box-shadow: 1px 2px 1px #999999;
 }
 .menu-filter-sort .menu-other:hover > .menu-sort-other {
   display: block;
@@ -383,7 +392,7 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 }
 .menu-filter-sort .menu-price:hover {
   background-color: #ffffff;
-  box-shadow: 1px 1px 1px #999999;
+  box-shadow: 1px 2px 1px #999999;
 }
 .menu-filter-sort .menu-price:hover > .menu-sort-price {
   display: block;
@@ -404,7 +413,7 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
 }
 .menu-sort-other li:hover,
 .menu-sort-price li:hover {
-  color: #0088cc;
+  color: #1e89e0;
 }
 .menu-filter-options {
   float: right;
@@ -416,7 +425,7 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   cursor: pointer;
 }
 .menu-filter-options span:hover {
-  color: #0088cc;
+  color: #1e89e0;
 }
 .shop {
   width: 100%;
@@ -449,14 +458,14 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   background-color: #F7F7F7;
 }
 .shop-item:hover h2 {
-  color: #0088cc;
+  color: #1e89e0;
 }
 .shop-item img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   padding: 20px;
 }
 .shop-item time {
@@ -467,13 +476,15 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   display: block;
   width: 80px;
   color: #999999;
+  font-size: .8em;
   text-align: center;
 }
 .shop-item-info {
   position: absolute;
   top: 0;
   left: 90px;
-  padding: 20px;
+  padding-top: 15px;
+  padding-left: 20px;
 }
 .shop-item-info h2 {
   font-size: 1.2em;
@@ -494,13 +505,14 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   position: absolute;
   top: 90px;
   left: 90px;
-  padding: 20px;
+  padding-top: 16px;
+  padding-left: 20px;
 }
 .shop-attr-icon span {
   display: inline-block;
-  width: 20px;
-  font-size: .9em;
-  line-height: 20px;
+  width: 18px;
+  font-size: .8em;
+  line-height: 18px;
   text-align: center;
   border-radius: 3px;
   background-color: #cccccc;
@@ -539,6 +551,7 @@ footer {
   text-decoration: underline;
 }
 .contact {
+  position: relative;
   float: left;
   width: 240px;
   margin-left: 5%;
@@ -569,7 +582,10 @@ footer {
 .contact dd a:visited,
 .contact dd a:hover,
 .contact dd a:active {
-  color: #0088cc;
+  color: #1e89e0;
+}
+.contact dd i {
+  cursor: pointer;
 }
 .contact dd i.fa {
   line-height: 49px;
@@ -578,15 +594,50 @@ footer {
 .contact dd i.fa-wechat:hover {
   color: #46F00A;
 }
+.contact dd i.fa-wechat:hover ~ .contact-wechat {
+  display: block;
+}
 .contact dd i.fa-weibo:hover {
   color: #F21212;
 }
 .contact dd i.fa-renren:hover {
   color: #00F;
 }
+.contact-wechat {
+  position: absolute;
+  top: 132px;
+  left: 75px;
+  width: 120px;
+  height: 160px;
+  color: #000000;
+  background-color: #ffffff;
+  box-shadow: 0 3px 3px #cccccc;
+  display: none;
+}
+.contact-wechat img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  margin: 5px 5px -15px;
+}
+.contact-wechat p {
+  line-height: 18px;
+  font-size: .8em;
+  text-align: center;
+}
+.contact-wechat:after {
+  content: "";
+  position: relative;
+  top: -192px;
+  left: 50px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-bottom-color: #ffffff;
+}
 .app {
   float: right;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .app img {
   float: left;
@@ -613,7 +664,7 @@ footer {
   background-color: #ffffff;
 }
 .copyright {
-  padding-top: 60px;
+  padding-top: 85px;
   height: 60px;
   line-height: 60px;
   clear: both;
@@ -626,11 +677,11 @@ footer {
 .copyright a:visited,
 .copyright a:hover,
 .copyright a:active {
-  color: #0088cc;
+  color: #1e89e0;
 }
 @media (max-width: 1280px) {
   .container {
-    width: 96%;
+    width: 92%;
   }
   .row {
     width: 100%;
@@ -657,7 +708,7 @@ footer {
     margin-right: 30%;
   }
   nav .nav-link li {
-    color: #0088cc;
+    color: #1e89e0;
   }
   nav .nav-link li:hover {
     color: #0DADFA;
@@ -698,6 +749,9 @@ footer {
   }
 }
 @media (max-width: 860px) {
+  .container {
+    min-width: 768px;
+  }
   .row {
     width: 100%;
     margin-top: 4px;

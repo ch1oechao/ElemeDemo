@@ -34,7 +34,7 @@ window.onload = function() {
         time: 3000,
         //轮播容器存放图片大小
         width: 100 + '%',
-        height: 120
+        height: 80
     });
 }
 
@@ -73,7 +73,7 @@ carouseller.prototype.init = function() {
 
         var imgDom =  ''
                       + '<li data-img="'+ i +'">'
-                            + '<img src="'+ imgSrc +'" alt="carousel img' + imgNum + '">'
+                            + '<img src="'+ imgSrc +'" alt="carousel img' + imgNum + '" />'
                       + '</li>';
 
         var numDom = '<li data-slide-to="' + i + '">' + imgNum + '</li>';
