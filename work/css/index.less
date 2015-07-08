@@ -1,14 +1,32 @@
-//全局变量
-
 //颜色
 @bgcolor: #F7F7F7;
 
-@brand-bgcolor: #1E89E0;
+@brand-bgcolor: #0088CC;
 @brand-active: #006BC7;
-@brand-item: #FFF;
 @brand-link: #A5D0F3;
 
-@primary-font: #999;
+@white: #FFF;
+@gray9: #999;
+@greyC: #CCC;
+@grey3: #333;
+@black: #000;
+
+//模块
+.transition(@attr: all, @time: .5s, @ami: linear){
+    -webkit-transition: @attr @time @ami;
+       -moz-transition: @attr @time @ami;
+        -ms-transition: @attr @time @ami;
+         -o-transition: @attr @time @ami;
+            transition: @attr @time @ami;
+}
+
+.transform-rotate(@deg: 90deg){
+    -webkit-transform: rotate(@deg);
+       -moz-transform: rotate(@deg);
+        -ms-transform: rotate(@deg);
+         -o-transform: rotate(@deg);
+            transform: rotate(@deg);
+}
 
 
 * {
@@ -17,7 +35,7 @@
     font-family: 'Microsoft YaHei', sans-serif;
 }
 
-body, html {
+html {
     width: 100%;
     background-color: @bgcolor;
 }
@@ -41,11 +59,7 @@ a {
 
     margin: 0 auto;
 
-    -webkit-transition: width .5s linear;
-       -moz-transition: width .5s linear;
-        -ms-transition: width .5s linear;
-         -o-transition: width .5s linear;
-            transition: width .5s linear;
+    .transition(width, .5s, linear);
 
     &:before,
     &:after {
@@ -67,7 +81,7 @@ nav {
 
     line-height: 60px;
 
-    color: @brand-item;
+    color: @white;
     background-color: @brand-bgcolor;
 
     h1 {
@@ -83,7 +97,7 @@ nav {
     a { 
         &:link, 
         &:visited {
-            color: @brand-item;
+            color: @white;
         }
     }
 
@@ -100,7 +114,7 @@ nav {
             margin: -3px;
 
             &:hover {
-                background-color: #0F7CDB;
+                background-color: #0D7CDE;
                 cursor: pointer;
             }
         }
@@ -127,18 +141,15 @@ nav {
         &::after {
             content: "";
             position: absolute;
-            top: 13px;
+            top: 12px;
             right: 28px;
             height: 0;
             width: 0;
 
-            -webkit-transform: rotate(-45deg);
-               -moz-transform: rotate(-45deg);
-                -ms-transform: rotate(-45deg);
-                 -o-transform: rotate(-45deg);
-                    transform: rotate(-45deg);
+            .transform-rotate(-45deg);
+
             overflow: hidden;
-            border: 4px dotted transparent;
+            border: 4px dashed transparent;
             border-bottom-color: #F00;
         }
     }
@@ -147,13 +158,13 @@ nav {
         float: right;
         margin-right: 150px;
 
-        color: #A5D0F3;
+        color: @brand-link;
 
         li {
             padding: 0 8px;
 
             &:hover {
-                color: @brand-item;
+                color: @white;
                 cursor: pointer;
             }
         }
@@ -173,25 +184,27 @@ nav {
 
 }
 
+.nav-brand {
+    text-indent: 2.4em;
+    background: url(../img/eleme-logo.png) no-repeat;
+}
+
 .nav-moblie {
     z-index: 9999;
     position: absolute;
-    top: 120px;
+    top: 85px;
     right: 100px;
     width: 200px;
     height: 132px;
 
     opacity: 0;
+    z-index: -1;
 
-    color: #000;
-    background-color: #FFF;
-    box-shadow: 2px 2px 5px #666;
+    color: @black;
+    background-color: @white;
+    box-shadow: 2px 2px 5px @gray9;
 
-    -webkit-transition: all .2s linear;
-       -moz-transition: all .2s linear;
-        -ms-transition: all .2s linear;
-         -o-transition: all .2s linear;
-            transition: all .2s linear;
+    .transition(all, .2s, linear);
 
     h3 {
         font-size: 1em;
@@ -219,7 +232,7 @@ nav {
         &:visited,
         &:hover,
         &:active {
-            color: #000;
+            color: @black;
         }
     }
 
@@ -232,8 +245,8 @@ nav {
         height: 0;
         z-index: 9999999;
         overflow: hidden;
-        border: 8px dotted transparent;
-        border-bottom-color: #FFF;
+        border: 8px dashed transparent;
+        border-bottom-color: @white;
     }
 }
 
@@ -241,6 +254,7 @@ li[data-nav = mobileApp] {
     &:hover + .nav-moblie {
         opacity: 1;
         top: 60px;
+        z-index: 999;
     }
 }
 
@@ -254,7 +268,7 @@ li[data-nav = mobileApp] {
     }
 
     .location-title {
-        color: @primary-font;
+        color: @gray9;
     }
 
     a {
@@ -284,11 +298,7 @@ li[data-nav = mobileApp] {
 
             border: 1px solid #DDD;
 
-            -webkit-transition: all .2s ease-in-out;
-               -moz-transition: all .2s ease-in-out;
-                -ms-transition: all .2s ease-in-out;
-                 -o-transition: all .2s ease-in-out;
-                    transition: all .2s ease-in-out;
+            .transition(all, .2s, ease-in-out);
 
             &:focus {
                 outline: none;
@@ -301,12 +311,12 @@ li[data-nav = mobileApp] {
 
         span {
             position: absolute;
-            top: 24px;
+            top: 1px;
             right: 8px;
             cursor: pointer;
 
             i.fa-search {
-                color: #999;
+                color: @gray9;
             }
         }
 
@@ -320,17 +330,58 @@ li[data-nav = mobileApp] {
 }
 
 .carousel {
+    position: relative;
+
     width: 100%;
     height: 120px;
     margin-bottom: 10px;
 
+    overflow: hidden;
+
     background-color: #DDD;
+}
+
+.carousel-list {
+
+    img {
+        width: 100%;
+        height: 120px;
+    }
+}
+
+.carousel-order {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    padding-right: 10px;
+    padding-bottom: 5px;
+    z-index: 10;
+
+    li {
+        display: inline-block;
+        float: left;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        margin-left: 3px;
+        text-align: center;
+
+        cursor: pointer;
+        background-color: rgba(0,0,0, .2);
+
+        &.active,
+        &:hover {
+            color: @white;
+            background-color: #FF5A00;
+        }
+    }
 }
 
 .menu-filter-item {
 
     overflow: hidden;
-    color: #999;
+    color: @gray9;
 
     .active {
         color: @brand-bgcolor;
@@ -360,11 +411,11 @@ li[data-nav = mobileApp] {
     width: 100%;
     overflow: hidden;
 
-    border: 1px solid #CCC;
+    border: 1px solid @greyC;
 
     font-size: .9em;
-    color: #999;
-    background-color: #FFF;
+    color: @gray9;
+    background-color: @white;
 
     dl {
         padding: 16px 10px;
@@ -374,23 +425,25 @@ li[data-nav = mobileApp] {
         display: inline-block;
         width: 80px;
         margin-left: 10px;
+        line-height: 1.8em;
     }
 
     dd {
         display: inline;
         padding: 1px 8px;
         margin: 0 6px;
+        line-height: 1.8em;
 
         &:hover {
-            color: #FFF;
+            color: @white;
 
             cursor: pointer;
             border-radius: 3px;
-            background-color: #CCC;
+            background-color: @greyC;
         }
 
         &.selected {
-            color: #FFF;
+            color: @white;
 
             cursor: pointer;
             border-radius: 3px;
@@ -426,8 +479,8 @@ li[data-nav = mobileApp] {
         width: 105px;
 
         &:hover {
-            background-color: #FFF;
-            box-shadow: 1px 1px 1px #999;
+            background-color: @white;
+            box-shadow: 1px 1px 1px @gray9;
         }
         &:hover > .menu-sort-other {
             display: block;
@@ -438,8 +491,8 @@ li[data-nav = mobileApp] {
 
         width: 145px;
         &:hover {
-            background-color: #FFF;
-            box-shadow: 1px 1px 1px #999;
+            background-color: @white;
+            box-shadow: 1px 1px 1px @gray9;
         }
         &:hover > .menu-sort-price {
             display: block;
@@ -453,12 +506,12 @@ li[data-nav = mobileApp] {
     display: none;
     width: 100%;
     z-index: 9999;
-    background-color: #FFF;
-    box-shadow: 1px 1px 1px #999;
+    background-color: @white;
+    box-shadow: 1px 1px 1px @gray9;
 
     li {
         display: block;
-        color: #000;
+        color: @black;
 
         &:hover {
             color: @brand-bgcolor;
@@ -488,8 +541,8 @@ li[data-nav = mobileApp] {
     width: 100%;
     margin-top: 30px;
 
-    background-color: #FFF;
-    border: 1px solid #CCC;
+    background-color: @white;
+    border: 1px solid @greyC;
 }
 
 .row {
@@ -546,7 +599,7 @@ li[data-nav = mobileApp] {
         display: block;
         width: 80px;
 
-        color: #999;
+        color: @gray9;
         text-align: center;
     }
 
@@ -567,7 +620,7 @@ li[data-nav = mobileApp] {
     span {
         font-size: .8em;
         line-height: 2em;
-        color: #999;
+        color: @gray9;
     }
 
 }
@@ -596,7 +649,7 @@ li[data-nav = mobileApp] {
         text-align: center;
 
         border-radius: 3px;
-        background-color: #CCC;
+        background-color: @greyC;
     }
 }
 
@@ -606,7 +659,7 @@ li[data-nav = mobileApp] {
 
     line-height: 80px;
     text-align: center;
-    color: #999;
+    color: @gray9;
 }
 
 
@@ -615,7 +668,7 @@ footer {
     padding-top: 50px;
     border-top: 1px solid #DDD;
 
-    color: #999;
+    color: @gray9;
 }
 
 .footer-link {
@@ -624,7 +677,7 @@ footer {
         padding: 10px 6% 0 0;
 
         dt {
-            color: #000;
+            color: @black;
             padding-bottom: 10px;
         }
 
@@ -635,10 +688,10 @@ footer {
             cursor: pointer;
 
             a {
-                color: #999;
+                color: @gray9;
 
                 &:hover {
-                    color: #000;
+                    color: @black;
                     text-decoration: underline;
                 }
             }
@@ -666,7 +719,7 @@ footer {
         float: left;
         line-height: 45px;
 
-        color: #000;
+        color: @black;
     }
 
     dd {
@@ -729,7 +782,7 @@ footer {
     padding-left: 15px;
 
     h3 {
-        color: #000;
+        color: @black;
     }
 
     span {
@@ -741,9 +794,9 @@ footer {
         padding: 2px 5px;
         border: 1px solid #DDD;
 
-        color: #333;
+        color: @grey3;
         font-size: .7em;
-        background-color: #FFF;
+        background-color: @white;
     }
 }
 
@@ -791,6 +844,53 @@ footer {
             clear: both;
             border-bottom: 1px solid #DDD;
         }
+    }
+}
+
+@media (max-width: 1080px) {
+    nav {
+        margin-bottom: 60px;
+
+        .nav-link {
+            margin-right: 30%;
+            li {
+                color: @brand-bgcolor;
+                &:hover {
+                    color: #0DADFA;
+                }
+            }
+        }
+    }
+
+    .nav-moblie {
+        z-index: 9999;
+        position: absolute;
+        top: 145px;
+        right: 190px;
+    }
+
+    li[data-nav = mobileApp] {
+        &:hover + .nav-moblie {
+            opacity: 1;
+            top: 115px;
+            z-index: 999;
+        }
+    }
+
+    .menu-filter-options {
+        padding-right: 0;
+        padding-left: 0;
+        border: none;
+    }
+    
+    .footer-link {
+        margin-left: 5%;
+    }
+    .app {
+        clear: both;
+        float: left;
+        margin-top: 50px;
+        margin-left: 40%;
     }
 }
 

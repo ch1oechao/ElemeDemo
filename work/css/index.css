@@ -3,7 +3,6 @@
   padding: 0;
   font-family: 'Microsoft YaHei', sans-serif;
 }
-body,
 html {
   width: 100%;
   background-color: #f7f7f7;
@@ -22,11 +21,11 @@ a {
   position: relative;
   width: 84%;
   margin: 0 auto;
-  -webkit-transition: width .5s linear;
-  -moz-transition: width .5s linear;
-  -ms-transition: width .5s linear;
-  -o-transition: width .5s linear;
-  transition: width .5s linear;
+  -webkit-transition: width 0.5s linear;
+  -moz-transition: width 0.5s linear;
+  -ms-transition: width 0.5s linear;
+  -o-transition: width 0.5s linear;
+  transition: width 0.5s linear;
 }
 .container:before,
 .container:after {
@@ -43,7 +42,7 @@ nav {
   width: 100%;
   line-height: 60px;
   color: #ffffff;
-  background-color: #1e89e0;
+  background-color: #0088cc;
 }
 nav h1 {
   float: left;
@@ -68,7 +67,7 @@ nav .nav-item li {
   margin: -3px;
 }
 nav .nav-item li:hover {
-  background-color: #0F7CDB;
+  background-color: #0D7CDE;
   cursor: pointer;
 }
 nav li[data-nav=brand] {
@@ -89,7 +88,7 @@ nav li[data-nav=brand]::before {
 nav li[data-nav=brand]::after {
   content: "";
   position: absolute;
-  top: 13px;
+  top: 12px;
   right: 28px;
   height: 0;
   width: 0;
@@ -99,13 +98,13 @@ nav li[data-nav=brand]::after {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   overflow: hidden;
-  border: 4px dotted transparent;
+  border: 4px dashed transparent;
   border-bottom-color: #F00;
 }
 nav .nav-link {
   float: right;
   margin-right: 150px;
-  color: #A5D0F3;
+  color: #a5d0f3;
 }
 nav .nav-link li {
   padding: 0 8px;
@@ -122,22 +121,27 @@ nav .nav-profilebar > a:hover,
 nav .nav-profilebar > a:active {
   text-decoration: underline;
 }
+.nav-brand {
+  text-indent: 2.4em;
+  background: url(../img/eleme-logo.png) no-repeat;
+}
 .nav-moblie {
   z-index: 9999;
   position: absolute;
-  top: 120px;
+  top: 85px;
   right: 100px;
   width: 200px;
   height: 132px;
   opacity: 0;
-  color: #000;
-  background-color: #FFF;
-  box-shadow: 2px 2px 5px #666;
-  -webkit-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -ms-transition: all .2s linear;
-  -o-transition: all .2s linear;
-  transition: all .2s linear;
+  z-index: -1;
+  color: #000000;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px #999999;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 .nav-moblie h3 {
   font-size: 1em;
@@ -163,7 +167,7 @@ nav .nav-profilebar > a:active {
 .nav-moblie > a:visited,
 .nav-moblie > a:hover,
 .nav-moblie > a:active {
-  color: #000;
+  color: #000000;
 }
 .nav-moblie::before {
   content: "";
@@ -174,12 +178,13 @@ nav .nav-profilebar > a:active {
   height: 0;
   z-index: 9999999;
   overflow: hidden;
-  border: 8px dotted transparent;
-  border-bottom-color: #FFF;
+  border: 8px dashed transparent;
+  border-bottom-color: #ffffff;
 }
 li[data-nav=mobileApp]:hover + .nav-moblie {
   opacity: 1;
   top: 60px;
+  z-index: 999;
 }
 .header-bar {
   width: 100%;
@@ -199,7 +204,7 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
 .header-bar a:visited,
 .header-bar a:hover,
 .header-bar a:active {
-  color: #1e89e0;
+  color: #0088cc;
 }
 .header-bar .search {
   position: absolute;
@@ -225,12 +230,12 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
 }
 .header-bar .search span {
   position: absolute;
-  top: 24px;
+  top: 1px;
   right: 8px;
   cursor: pointer;
 }
 .header-bar .search span i.fa-search {
-  color: #999;
+  color: #999999;
 }
 .header-bar .search::after {
   content: "|";
@@ -239,18 +244,48 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   color: #DDD;
 }
 .carousel {
+  position: relative;
   width: 100%;
   height: 120px;
   margin-bottom: 10px;
+  overflow: hidden;
   background-color: #DDD;
+}
+.carousel-list img {
+  width: 100%;
+  height: 120px;
+}
+.carousel-order {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  z-index: 10;
+}
+.carousel-order li {
+  display: inline-block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 3px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.carousel-order li.active,
+.carousel-order li:hover {
+  color: #ffffff;
+  background-color: #FF5A00;
 }
 .menu-filter-item {
   overflow: hidden;
-  color: #999;
+  color: #999999;
 }
 .menu-filter-item .active {
-  color: #1e89e0;
-  border-bottom: 2px solid #1e89e0;
+  color: #0088cc;
+  border-bottom: 2px solid #0088cc;
 }
 .menu-filter-item li {
   display: inline-block;
@@ -269,10 +304,10 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
 .menu-filter-list {
   width: 100%;
   overflow: hidden;
-  border: 1px solid #CCC;
+  border: 1px solid #cccccc;
   font-size: .9em;
-  color: #999;
-  background-color: #FFF;
+  color: #999999;
+  background-color: #ffffff;
 }
 .menu-filter-list dl {
   padding: 16px 10px;
@@ -281,23 +316,25 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   display: inline-block;
   width: 80px;
   margin-left: 10px;
+  line-height: 1.8em;
 }
 .menu-filter-list dd {
   display: inline;
   padding: 1px 8px;
   margin: 0 6px;
+  line-height: 1.8em;
 }
 .menu-filter-list dd:hover {
-  color: #FFF;
+  color: #ffffff;
   cursor: pointer;
   border-radius: 3px;
-  background-color: #CCC;
+  background-color: #cccccc;
 }
 .menu-filter-list dd.selected {
-  color: #FFF;
+  color: #ffffff;
   cursor: pointer;
   border-radius: 3px;
-  background-color: #1e89e0;
+  background-color: #0088cc;
 }
 .menu-filter-sort {
   width: 100%;
@@ -316,14 +353,14 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   text-align: center;
 }
 .menu-filter-sort > li:hover {
-  color: #1e89e0;
+  color: #0088cc;
 }
 .menu-filter-sort .menu-other {
   width: 105px;
 }
 .menu-filter-sort .menu-other:hover {
-  background-color: #FFF;
-  box-shadow: 1px 1px 1px #999;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px #999999;
 }
 .menu-filter-sort .menu-other:hover > .menu-sort-other {
   display: block;
@@ -332,8 +369,8 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   width: 145px;
 }
 .menu-filter-sort .menu-price:hover {
-  background-color: #FFF;
-  box-shadow: 1px 1px 1px #999;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px #999999;
 }
 .menu-filter-sort .menu-price:hover > .menu-sort-price {
   display: block;
@@ -344,17 +381,17 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   display: none;
   width: 100%;
   z-index: 9999;
-  background-color: #FFF;
-  box-shadow: 1px 1px 1px #999;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px #999999;
 }
 .menu-sort-other li,
 .menu-sort-price li {
   display: block;
-  color: #000;
+  color: #000000;
 }
 .menu-sort-other li:hover,
 .menu-sort-price li:hover {
-  color: #1e89e0;
+  color: #0088cc;
 }
 .menu-filter-options {
   float: right;
@@ -366,13 +403,13 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   cursor: pointer;
 }
 .menu-filter-options span:hover {
-  color: #1e89e0;
+  color: #0088cc;
 }
 .shop {
   width: 100%;
   margin-top: 30px;
-  background-color: #FFF;
-  border: 1px solid #CCC;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
 }
 .row {
   width: 100%;
@@ -399,7 +436,7 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   background-color: #F7F7F7;
 }
 .shop-item:hover h2 {
-  color: #1e89e0;
+  color: #0088cc;
 }
 .shop-item img {
   position: absolute;
@@ -416,7 +453,7 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   padding: 20px;
   display: block;
   width: 80px;
-  color: #999;
+  color: #999999;
   text-align: center;
 }
 .shop-item-info {
@@ -432,7 +469,7 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
 .shop-item-info span {
   font-size: .8em;
   line-height: 2em;
-  color: #999;
+  color: #999999;
 }
 .shop-item-grade {
   padding-right: 3px;
@@ -453,27 +490,27 @@ li[data-nav=mobileApp]:hover + .nav-moblie {
   line-height: 20px;
   text-align: center;
   border-radius: 3px;
-  background-color: #CCC;
+  background-color: #cccccc;
 }
 .shop-more {
   width: 100%;
   height: 80px;
   line-height: 80px;
   text-align: center;
-  color: #999;
+  color: #999999;
 }
 footer {
   margin-top: 50px;
   padding-top: 50px;
   border-top: 1px solid #DDD;
-  color: #999;
+  color: #999999;
 }
 .footer-link dl {
   float: left;
   padding: 10px 6% 0 0;
 }
 .footer-link dl dt {
-  color: #000;
+  color: #000000;
   padding-bottom: 10px;
 }
 .footer-link dl dd {
@@ -482,10 +519,10 @@ footer {
   cursor: pointer;
 }
 .footer-link dl dd a {
-  color: #999;
+  color: #999999;
 }
 .footer-link dl dd a:hover {
-  color: #000;
+  color: #000000;
   text-decoration: underline;
 }
 .contact {
@@ -504,7 +541,7 @@ footer {
   display: inline-block;
   float: left;
   line-height: 45px;
-  color: #000;
+  color: #000000;
 }
 .contact dd {
   display: inline-block;
@@ -519,7 +556,7 @@ footer {
 .contact dd a:visited,
 .contact dd a:hover,
 .contact dd a:active {
-  color: #1e89e0;
+  color: #0088cc;
 }
 .contact dd i.fa {
   line-height: 49px;
@@ -549,7 +586,7 @@ footer {
   padding-left: 15px;
 }
 .app-info h3 {
-  color: #000;
+  color: #000000;
 }
 .app-info span {
   font-size: .9em;
@@ -558,9 +595,9 @@ footer {
 .app-info a {
   padding: 2px 5px;
   border: 1px solid #DDD;
-  color: #333;
+  color: #333333;
   font-size: .7em;
-  background-color: #FFF;
+  background-color: #ffffff;
 }
 .copyright {
   padding-top: 60px;
@@ -576,7 +613,7 @@ footer {
 .copyright a:visited,
 .copyright a:hover,
 .copyright a:active {
-  color: #1e89e0;
+  color: #0088cc;
 }
 @media (max-width: 1280px) {
   .container {
@@ -597,6 +634,45 @@ footer {
     width: 33%;
     clear: both;
     border-bottom: 1px solid #DDD;
+  }
+}
+@media (max-width: 1080px) {
+  nav {
+    margin-bottom: 60px;
+  }
+  nav .nav-link {
+    margin-right: 30%;
+  }
+  nav .nav-link li {
+    color: #0088cc;
+  }
+  nav .nav-link li:hover {
+    color: #0DADFA;
+  }
+  .nav-moblie {
+    z-index: 9999;
+    position: absolute;
+    top: 145px;
+    right: 190px;
+  }
+  li[data-nav=mobileApp]:hover + .nav-moblie {
+    opacity: 1;
+    top: 115px;
+    z-index: 999;
+  }
+  .menu-filter-options {
+    padding-right: 0;
+    padding-left: 0;
+    border: none;
+  }
+  .footer-link {
+    margin-left: 5%;
+  }
+  .app {
+    clear: both;
+    float: left;
+    margin-top: 50px;
+    margin-left: 40%;
   }
 }
 @media (max-width: 960px) {
