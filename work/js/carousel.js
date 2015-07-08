@@ -29,7 +29,12 @@ window.onload = function() {
         //盛放轮播序号导航容器
         numDom: $(".carousel-order")[0],
         //图片信息
-        imgs: imgInfo
+        imgs: imgInfo,
+        // 轮播时间
+        time: 3000,
+        //轮播容器存放图片大小
+        width: 100 + '%',
+        height: 120
     });
 }
 
@@ -39,6 +44,9 @@ function carouseller(options){
     this.orderDom = options.numDom;
     this.imgs = options.imgs;
     this.len = options.imgs.length;
+    this.time = options.time;
+    this.width = options.width;
+    this.height = options.height;
 
     this.init();
     this.bindDom();
@@ -95,17 +103,18 @@ carouseller.prototype.init = function() {
 carouseller.prototype.renderDom = function(n) {
     var imgDom = this.dom.childNodes,
         numDom = this.orderDom.childNodes,
-        len = this.len;
+        len = this.len,
+        that = this;
 
     var curId = n || this.curId;
 
     // 初始化所有节点的样式
     each(imgDom, function(item, i) {
-        item.style.width = 100 + '%';
+        item.style.width = that.width;
         item.style.display = 'inline-block';
         item.style.position = 'absolute';
         item.style.transition = 'transform .3s ease-out';
-        item.style.transform = 'translate3d(0, ' + 120 * i + 'px, 0)';
+        item.style.transform = 'translate3d(0, ' + that.height * i + 'px, 0)';
     });
 
     // 当前序号显示图片
@@ -114,12 +123,12 @@ carouseller.prototype.renderDom = function(n) {
     // 当前序号之前影藏图片
     for (var i = 0; i < curId; i++) {
       imgDom[i] 
-        && (imgDom[i].style.transform = 'translate3d(0, -' + 120 +'px, 0)');
+        && (imgDom[i].style.transform = 'translate3d(0, -' + that.height +'px, 0)');
     }
     // 当前序号之后影藏图片
     for (var ii = curId + 1; ii < len; ii++) {
       imgDom[ii] 
-        && (imgDom[ii].style.transform = 'translate3d(0, ' + 120 +'px, 0)');
+        && (imgDom[ii].style.transform = 'translate3d(0, ' + that.height +'px, 0)');
     }
 
     // 更换当前序号导航节点的样式
@@ -148,7 +157,7 @@ carouseller.prototype.slideDom = function() {
 
         that.slideDom();
 
-    }, 3000);
+    }, that.time);
 
 }
 
