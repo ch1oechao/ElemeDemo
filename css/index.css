@@ -27,8 +27,7 @@ a {
 }
 .container {
   position: relative;
-  width: 90%;
-  min-width: 1100px\9;
+  width: 1200px;
   margin: 0 auto;
   -webkit-transition: width 0.5s linear;
   -moz-transition: width 0.5s linear;
@@ -43,6 +42,7 @@ nav {
   display: block;
   height: 60px;
   width: 100%;
+  min-width: 1200px\9;
   line-height: 60px;
   color: #ffffff;
   background-color: #1e89e0;
@@ -447,6 +447,11 @@ li[data-nav=mobileApp]:hover > .nav-moblie {
   width: 25%;
   clear: both;
   border-bottom: 1px solid #DDD;
+  -webkit-transition: width 0.2s linear;
+  -moz-transition: width 0.2s linear;
+  -ms-transition: width 0.2s linear;
+  -o-transition: width 0.2s linear;
+  transition: width 0.2s linear;
 }
 .shop-item {
   position: relative;
@@ -723,7 +728,7 @@ aside .top:after {
 }
 @media (max-width: 1280px) {
   .container {
-    width: 92%;
+    width: 94%;
   }
   .row {
     width: 100%;
