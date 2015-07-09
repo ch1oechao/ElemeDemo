@@ -539,7 +539,7 @@ footer {
   padding-bottom: 10px;
 }
 .footer-link dl dd {
-  font-size: .9em;
+  font-size: .8em;
   line-height: 30px;
   cursor: pointer;
 }
@@ -550,6 +550,47 @@ footer {
   color: #000000;
   text-decoration: underline;
 }
+aside {
+  position: fixed;
+  right: 6px;
+  bottom: -200px;
+  margin-right: 10px;
+  float: right;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #cccccc;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-transition: bottom 0.7s ease-out;
+  -moz-transition: bottom 0.7s ease-out;
+  -ms-transition: bottom 0.7s ease-out;
+  -o-transition: bottom 0.7s ease-out;
+  transition: bottom 0.7s ease-out;
+}
+aside:hover {
+  background-color: #1e89e0;
+}
+aside .top {
+  position: absolute;
+  right: 19px;
+  top: -9px;
+  text-align: center;
+  display: block;
+  font-size: .9em;
+}
+aside .top:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -14px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #ffffff;
+}
 .contact {
   position: relative;
   float: left;
@@ -558,6 +599,7 @@ footer {
   padding-left: 40px;
   padding-bottom: 35px;
   border-left: 1px solid #DDD;
+  font-size: .9em;
 }
 .contact dl {
   display: block;
@@ -653,7 +695,7 @@ footer {
   color: #000000;
 }
 .app-info span {
-  font-size: .9em;
+  font-size: .8em;
   line-height: 35px;
 }
 .app-info a {
@@ -701,27 +743,41 @@ footer {
   }
 }
 @media (max-width: 1080px) {
+  .container {
+    width: 96%;
+  }
+  .row .col-item {
+    width: 33%;
+  }
   nav {
-    margin-bottom: 60px;
+    margin-bottom: 65px;
+  }
+  nav .nav-item {
+    margin-left: 20%;
   }
   nav .nav-link {
-    margin-right: 30%;
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
   }
   nav .nav-link li {
+    height: 50px;
+    padding-right: 18px;
     color: #1e89e0;
   }
   nav .nav-link li:hover {
     color: #0DADFA;
+    border-bottom: 2px solid #1e89e0;
   }
   li[data-nav=mobileApp]:hover > .nav-moblie {
     opacity: 1;
-    top: 50px;
+    top: 52px;
     z-index: 999;
     visibility: visible;
   }
   .nav-moblie {
     z-index: -1;
-    top: 70px;
+    top: 75px;
     right: 228px;
     visibility: hidden;
   }
@@ -763,5 +819,8 @@ footer {
     width: 50%;
     clear: both;
     border-bottom: 1px solid #DDD;
+  }
+  nav .nav-item {
+    margin-left: 14%;
   }
 }

@@ -225,4 +225,57 @@ function delegateClickEvent(ele, listener) {
     }
 };
 
+/**
+ * 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+ *
+ * @param {Object} element 传入一个DOM节点元素
+ * 
+ * http://www.cnblogs.com/leejersey/p/4127714.html
+ */
+function getPosition(element){
+    var posRect = element.getBoundingClientRect();
+    var docTop = document.documentElement.clientTop;
+    var docLeft = document.documentElement.clientLeft;
 
+    return { x: posRect.top - docTop ,
+             y: posRect.left - docLeft
+           }
+}
+
+/**
+ * 给一个element绑定一个针对event事件的响应，响应函数为listener
+ *
+ * @param {Object} element 传入DOM节点元素
+ * @param {string} event 传入事件字符串
+ * @param {string | Function} listener 传入函数名称或直接传入匿名函数 
+ */
+function addEvent(element, event, listener) {
+    if (element.addEventListener) {
+        element.addEventListener(event, listener, false);
+    }
+    else if (element.attachEvent) {
+        element.attachEvent("on" + event, listener);
+    }
+    else {
+        element["on" + event] = listener;
+    }
+
+}
+
+/**
+ *功能：阻止事件默认行为
+ *
+ * @class
+ */
+function stopDefault( e ) {
+    // 阻止默认浏览器动作(W3C)
+    if ( e && e.preventDefault ) {
+        e.preventDefault();
+    }
+    else {
+        // IE中阻止函数器默认动作的方式
+        window.event.returnValue = false;
+    }
+    return false;
+}
+ 

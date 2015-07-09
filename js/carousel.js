@@ -2,23 +2,23 @@ window.onload = function() {
     //定义轮播图需要的图片名称和路径
     var imgInfo = [
         {
-            name: 'img1.png',
+            name: '8c8bb2c3d34b0feda3fbf2d6eb575jpeg.jpeg',
             src: 'img/carousel/'
         },
         {
-            name: 'img2.png',
+            name: '10ea2f228dce4ef61c56c52ae5f9agif.gif',
             src: 'img/carousel/'
         },
         {
-            name: 'img3.png',
+            name: '979a00b4aba4e74c93f5fe76d080fgif.gif',
             src: 'img/carousel/'
         },
         {
-            name: 'img4.png',
+            name: '7212b71266c74bbed73750ab6d0b3jpeg.jpeg',
             src: 'img/carousel/'
         },
         {
-            name: 'img5.png',
+            name: 'ab19ea64b6ba5d4d52b7f2fb0b0f9gif.gif',
             src: 'img/carousel/'
         }
     ];
@@ -36,6 +36,32 @@ window.onload = function() {
         width: 100 + '%',
         height: 80
     });
+
+
+    //返回顶部
+    var topArrow = $("aside")[0];
+
+    addEvent(document, "scroll", function(){
+        var top = document.body.scrollTop || document.documentElement.scrollTop;
+        if( top >= 400 ) {
+            topArrow.style.bottom = 200 + 'px';
+        }
+        else {
+            topArrow.style.bottom = -200 + 'px';
+        }
+    });
+
+    addEvent(topArrow, "click", function(e){
+        e = e || window.event;
+        var target = e.target || e.srcElement;
+
+        if (target.nodeName.toUpperCase() === "A") {
+            stopDefault(e);
+        }
+
+        document.documentElement.scrollTop = document.body.scrollTop = 0;
+    });
+
 }
 
 function carouseller(options){
@@ -177,3 +203,4 @@ carouseller.prototype.bindDom = function() {
         that.renderDom(clickId);
     });
 }
+ 
